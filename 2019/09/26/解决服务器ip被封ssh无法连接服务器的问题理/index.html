@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Hello World - muggle‘s blog</title>
+<title>解决服务器ip被封ssh无法连接服务器的问题 - muggle‘s blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -18,18 +18,25 @@
 
 
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="前端 代码 程序员 摄影 吉他 旅行 Dota2 数码控">
+    <meta name="description" content="国庆节前几个礼拜的某天，我便宜又好用的搬瓦工服务器到期了，虽然它已经不是我的翻墙主力，但实在舍不得它便宜的价格，就续费了。谁知当天晚上ip就被封了，ping不通，ssh也连接不上，只能眼巴巴地看着它在大洋彼岸 Running 。。。很难受">
+<meta name="keywords" content="科学上网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://shuizyang.com/2019/09/09/hello-world/index.html">
+<meta property="og:title" content="解决服务器ip被封ssh无法连接服务器的问题">
+<meta property="og:url" content="https://shuizyang.com/2019/09/26/解决服务器ip被封ssh无法连接服务器的问题理/index.html">
 <meta property="og:site_name" content="muggle‘s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="国庆节前几个礼拜的某天，我便宜又好用的搬瓦工服务器到期了，虽然它已经不是我的翻墙主力，但实在舍不得它便宜的价格，就续费了。谁知当天晚上ip就被封了，ping不通，ssh也连接不上，只能眼巴巴地看着它在大洋彼岸 Running 。。。很难受">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-25T14:54:04.500Z">
+<meta property="og:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/wall.jpg">
+<meta property="og:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/running_server.jpg">
+<meta property="og:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/copy_export_command.jpg">
+<meta property="og:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/ws_ping.jpg">
+<meta property="og:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/ws_ssh.jpg">
+<meta property="og:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/tmdhz.jpeg">
+<meta property="og:updated_time" content="2019-09-26T16:45:56.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="解决服务器ip被封ssh无法连接服务器的问题">
+<meta name="twitter:description" content="国庆节前几个礼拜的某天，我便宜又好用的搬瓦工服务器到期了，虽然它已经不是我的翻墙主力，但实在舍不得它便宜的价格，就续费了。谁知当天晚上ip就被封了，ping不通，ssh也连接不上，只能眼巴巴地看着它在大洋彼岸 Running 。。。很难受">
+<meta name="twitter:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/wall.jpg">
 <meta name="twitter:creator" content="@shuizheny">
 <meta name="twitter:site" content="https://twitter.com/shuizheny">
 
@@ -127,46 +134,68 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Hello World
+            解决服务器ip被封ssh无法连接服务器的问题
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2019-09-09T13:31:59.727Z" itemprop="datePublished">Sep 9 2019</time>
+            <time datetime="2019-09-26T14:38:36.000Z" itemprop="datePublished">Sep 26 2019</time>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            a minute read (About 122 words)
+            6 minutes read (About 907 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure></p>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
+        <p><img src="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/wall.jpg" alt><br>国庆节前几个礼拜的某天，我便宜又好用的搬瓦工服务器到期了，虽然它已经不是我的翻墙主力，但实在舍不得它便宜的价格，就续费了。谁知当天晚上ip就被封了，ping不通，ssh也连接不上，只能眼巴巴地看着它在大洋彼岸 <strong>Running</strong> 。。。很难受</p>
 <a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></p>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p><img src="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/running_server.jpg" alt></p>
+<p>为了不让它白跑，我开始在网上搜寻解决方式。起码得让我能登录吧。。。</p>
+<h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@你的服务器地址 -o <span class="hljs-string">"ProxyCommand=nc -X 5 -x 127.0.0.1:7891 %h %p"</span></span><br></pre></td></tr></table></figure></p>
+<p>or</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># .ssh/config 文件</span><br><span class="line">Host 你的服务器host 或者 *</span><br><span class="line">	ProxyCommand=nc -X 5 -x 127.0.0.1:7891 %h %p</span><br></pre></td></tr></table></figure></p>
+<h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><p>首先尝试了为使用socks5为终端开启代理的方法，我用的是mac，只要在终端输入一串<code>export</code>的命令即可，一般代理软件都会带，直接复制到终端中就成。</p>
+<p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">export</span> https_proxy=http://127.0.0.1:7890;</span><br><span class="line"><span class="hljs-built_in">export</span> http_proxy=http://127.0.0.1:7890;</span><br><span class="line"><span class="hljs-built_in">export</span> all_proxy=socks5://127.0.0.1:7891</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/copy_export_command.jpg" alt></p>
+<p>经过上面的操作，确实在终端能通过代理访问google什么，ip地址也变成国外的了。但是，尝试了一下ping，和ssh。发现还是不行。为了找到问题的所在，我尝试用<code>wireshark</code>抓了一下包。</p>
+<p><img src="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/ws_ping.jpg" alt><br>这张是ping我那台服务器的时候抓到的包，发现全是协议部分<code>ICMP</code>。同样下面一张图是我尝试用ssh去登录我的服务器的时候抓到的包,协议部分全是<code>TCP</code>。<br><img src="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/ws_ssh.jpg" alt></p>
+<p>是的，上面输入的命令并没有对这两个协议的连接生效。</p>
+<p>网上搜索了相关的问题，得出的结论是GFW对连接进行了TCP阻断，ICMP阻断，我对网络这块不是非常熟，有空去研究一下，进一步分享。这里只说一下当前问题的解决方式。</p>
+<p>对于TCP阻断，如果只想进行ssh登陆的话，解决方法很简单。(端口为你的ss代理端口，我的是7891)<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@你的服务器地址 -o &quot;ProxyCommand=nc -X 5 -x 127.0.0.1:7891 %h %p&quot;</span><br></pre></td></tr></table></figure></p>
+<p>也可在<code>.ssh/config</code>文件上加上<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Host 你的服务器host 或者 *</span><br><span class="line">	ProxyCommand=nc -X 5 -x 127.0.0.1:7891 %h %p</span><br></pre></td></tr></table></figure></p>
+<p>这样每次登录服务器只要输入正常的ssh命令就行了，系统自动会给你做代理。（输入ssh命令之后看到服务器回应让你输入密码的时候，竟然有种脱缰的野马又回到自己身边的感觉）</p>
+<p><img src="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/tmdhz.jpeg" alt></p>
+<p>至于如果想要扶墙的话，也有解决方式（V2ray、KCPTun），这里我没有做尝试，如果实在到了无梯可用的时候我可能会怼一下。</p>
+<p>最后，希望大家，爱国守法，合理上网。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://webdoger.club/2019/03/19/mac-ssh-%E9%80%9A%E8%BF%87%E4%BB%A3%E7%90%86%E9%93%BE%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank" rel="noopener">mac ssh 通过代理链接服务器</a></li>
+<li><a href="https://ieevee.com/tech/2017/10/19/ssh-over-socks5.html" target="_blank" rel="noopener">ssh over socks5：通过socks5 proxy来连接ssh服务器</a></li>
+<li><a href="https://gist.github.com/yougg/5d2b3353fc5e197a0917aae0b3287d64" target="_blank" rel="noopener">set http/socks/ssh proxy environment variables</a></li>
+<li><a href="https://doubibackup.com/wkcjzpyd-2.html" target="_blank" rel="noopener">关于目前 GFW(墙) 的封锁方式TCP封锁(阻断)猜想</a></li>
+</ul>
 
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/科学上网/">#科学上网</a></span>
     
     </div>
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/2019/09/09/阿甘正传/">阿甘正传</a>
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
         </span>
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-next">
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2019/09/11/小知识点-我理解的javascript的LHS和RHS/">小知识点 - 我理解的javascript的LHS和RHS</a>
             
         </span>
     </div>
@@ -188,8 +217,8 @@
     
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://shuizyang.com/2019/09/09/hello-world/';
-        this.page.identifier = '2019/09/09/hello-world/';
+        this.page.url = 'https://shuizyang.com/2019/09/26/解决服务器ip被封ssh无法连接服务器的问题理/';
+        this.page.identifier = '2019/09/26/解决服务器ip被封ssh无法连接服务器的问题理/';
         
         this.language = 'en';
         
