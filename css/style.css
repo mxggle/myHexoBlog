@@ -60,6 +60,8 @@ a.tag.article-tag {
       content: '#';
       position: absolute;
       right: 100%; }
+  .article .article-entry p {
+    line-height: 1.8; }
   .article .article-entry a {
     word-break: break-word; }
 
