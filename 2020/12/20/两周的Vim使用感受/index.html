@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>小知识点 - 我理解的javascript的LHS和RHS - muggle‘s blog</title>
+<title>两周的Vim使用感受 - muggle‘s blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -18,20 +18,20 @@
 
 
 
-    <meta name="description" content="最近在看Kyle Simpson的 You Dont Know JS第一章作用域讲到了LHS和RHS。 JS引擎在作用域内查找一个变量的时候会有两种查询方式，LHS（Left-hand Side）查询和 RHS（Right-hand Side）查询。">
-<meta name="keywords" content="Javascript,小知识点">
+    <meta name="description" content="先列一下我在使用Vim前对于它的刻板印象">
+<meta name="keywords" content="前端 代码 程序员 摄影 吉他 旅行 Dota2 数码控">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小知识点 - 我理解的javascript的LHS和RHS">
-<meta property="og:url" content="https://shuizyang.com/2019/09/11/小知识点-我理解的javascript的LHS和RHS/index.html">
+<meta property="og:title" content="两周的Vim使用感受">
+<meta property="og:url" content="https://shuizyang.com/2020/12/20/两周的Vim使用感受/index.html">
 <meta property="og:site_name" content="muggle‘s blog">
-<meta property="og:description" content="最近在看Kyle Simpson的 You Dont Know JS第一章作用域讲到了LHS和RHS。 JS引擎在作用域内查找一个变量的时候会有两种查询方式，LHS（Left-hand Side）查询和 RHS（Right-hand Side）查询。">
+<meta property="og:description" content="先列一下我在使用Vim前对于它的刻板印象">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/lhs_rhs.jpeg">
-<meta property="og:updated_time" content="2019-10-18T13:44:47.256Z">
+<meta property="og:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/florian-olivo-4hbJ-eymZ1o-unsplash.jpg">
+<meta property="og:updated_time" content="2021-01-24T07:29:21.107Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小知识点 - 我理解的javascript的LHS和RHS">
-<meta name="twitter:description" content="最近在看Kyle Simpson的 You Dont Know JS第一章作用域讲到了LHS和RHS。 JS引擎在作用域内查找一个变量的时候会有两种查询方式，LHS（Left-hand Side）查询和 RHS（Right-hand Side）查询。">
-<meta name="twitter:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/lhs_rhs.jpeg">
+<meta name="twitter:title" content="两周的Vim使用感受">
+<meta name="twitter:description" content="先列一下我在使用Vim前对于它的刻板印象">
+<meta name="twitter:image" content="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/florian-olivo-4hbJ-eymZ1o-unsplash.jpg">
 <meta name="twitter:creator" content="@shuizheny">
 <meta name="twitter:site" content="https://twitter.com/shuizheny">
 
@@ -135,64 +135,128 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            小知识点 - 我理解的javascript的LHS和RHS
+            两周的Vim使用感受
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2019-09-10T16:08:39.000Z" itemprop="datePublished">Sep 11 2019</time>
+            <time datetime="2020-12-20T10:25:58.000Z" itemprop="datePublished">Dec 20 2020</time>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            5 minutes read (About 742 words)
+            11 minutes read (About 1579 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p><img src="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/lhs_rhs.jpeg" alt><br>最近在看Kyle Simpson的 <em>You Dont Know JS</em>第一章作用域讲到了LHS和RHS。</p>
-<p>JS引擎在作用域内查找一个变量的时候会有两种查询方式，<code>LHS（Left-hand Side）查询</code>和 <code>RHS（Right-hand Side）查询</code>。</p>
+        <p><img src="https://muggle-blog.oss-cn-hangzhou.aliyuncs.com/blog/florian-olivo-4hbJ-eymZ1o-unsplash.jpg" alt="Photo by Florian Olivo"><br>先列一下我在使用Vim前对于它的刻板印象 </p>
 <a id="more"></a>
-<p>如果为了对称美的话，可以这么解释：</p>
-<ul>
-<li>当一个变量出现在赋值操作的左手边时，会进行 LHS 查询</li>
-<li>当一个变量出现在赋值操作的右手边时，会进行 RHS 查询</li>
-</ul>
-<p>但如果为了方便理解的话，我觉得这个解释差点味道，文中也说这个解释不是特别准确，特别是对RHS的解释，当涉及到代码的时候，在不理解这两个查询是什么意思是的情况下，容易让人摸不着头脑。</p>
-<p>说一下我是怎么理解的：</p>
-<ul>
-<li>LHS查询，可以把它理解为 容器查询，什么意思呢，比如说 <code>var a = 0</code> 赋值语句。引擎执行到这段代码的时候需要查找<code>a</code>这个变量<strong>并把0赋值给它</strong>。这个查询不需要知道<code>a</code>的值是什么，只需要找到<code>a</code>就行（也就是所谓的容器）然后在容器中放入<code>0</code></li>
-<li>RHS查询，可以把它理解为 值查询，如果你理解了上面所说的LHS查询的话，那么这个就很好理解了。比如：<code>console.log(a)</code>，引擎在执行到这段代码的时候，需要通过RHS查询获取一下<code>a</code>的值，然后将它的值打印出来</li>
-</ul>
-<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>在变量还没有被声明（在所有被查询的 作用域 中都没找到）的情况下，这两种类型的查询的行为不同。（这里我直接copy了原文）。</p>
-<ul>
-<li>如果 RHS 查询在嵌套的 作用域 的任何地方都找不到一个值，这会导致 引擎 抛出一个 ReferenceError。必须要注意的是这个错误的类型是 ReferenceError。</li>
-<li>相比之下，如果 引擎 在进行一个 LHS 查询，但到达了顶层（全局 作用域）都没有找到它，而且如果程序没有运行在“Strict模式”[^note-strictmode]下，那么这个全局 作用域 将会在 全局作用域中 创建一个同名的新变量，并把它交还给 引擎。</li>
-<li>在 ES5 中被加入的“Strict模式”[^note-strictmode]，有许多与一般/宽松/懒惰模式不同的行为。其中之一就是不允许自动/隐含的全局变量创建。在这种情况下，将不会有全局 作用域 的变量交回给 LHS 查询，并且类似于 RHS 的情况, 引擎 将抛出一个 ReferenceError</li>
-</ul>
 
-    
-    </div>
-    
-    <div class="columns is-variable is-1 is-multiline is-mobile">
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Javascript/">#Javascript</a></span>
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/小知识点/">#小知识点</a></span>
+<ol>
+<li>命令很多, 使用vim, 需要记忆大量的命令</li>
+<li>现在像VSCode, webStrom 这些编辑器, IDE 生态非常丰富, 使用Vim 有点”old school”, 自动补全定义跳转这些<br>功能搞起来也没前者方便</li>
+</ol>
+<p>我平时喜欢逛逛油管, 在上面总能看到一些大佬撸代码的视频, 或者敲代码的crash course . 关注的几个博主比如大名鼎鼎、破解iPhone手机的George Hotz, 软件顾问Ben Award 都还在使用vim. 在他们手里那个光标像个带了个跳刀的火猫在代码间穿梭自如. 我忍不住打开vim 敲了几下,MD我的光标简直像个小脑发育不全的智障. </p>
+<p>羡慕之余, 我学起了Vim, 现在已经用了两个礼拜了, 基本离不开它了，很多命令已经熟记在心(其实两天就够了), 只差多练提速了</p>
+<p>网上vim 命令大全一搜一大堆, 我这里就只记录一下常用的几个命令, 有了以下几个, 基本上就能非常愉快地使用vim了</p>
+<h1 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h1><h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><ul>
+<li>正常模式(Normal Mode) 大部分命令都在这个模式发出(按<code>esc</code>退出其他模式进入normal模式)</li>
+<li>插入模式(Insert Mode) 可以输入文本，在正常模式下，按<code>i</code>、<code>a</code>、<code>o</code>等都可以进入插入模式。</li>
+<li>可视模式(Visual Mode)：正常模式下按v可以进入可视模式， 在可视模式下，移动光标可以选择文本。按<code>V</code>进入可视行模式， 总是整行整行的选中。<code>ctrl+v</code>进入可视块模式.</li>
+<li>替换模式(Replace Mode)：正常模式下，按<code>R</code>进入。</li>
+<li>命令模式(Command Mode): 可输入多种命令, 比如全局搜索, 正则替换等, 在正常模式输入<code>:</code>进入</li>
+</ul>
+<h3 id="上下左右移动"><a href="#上下左右移动" class="headerlink" title="上下左右移动,"></a>上下左右移动,</h3><p>没使用vim之前总觉得vim为啥需要把移动按键放在这个位置, 也没有具体的意思, 用多了才知道,这个位置可比键盘上的上下左右舒服多了.现在我没事就喜欢JKJKJK地敲</p>
+<ul>
+<li><code>h</code> 左</li>
+<li><code>j</code> 上</li>
+<li><code>k</code> 下</li>
+<li><code>l</code> 右</li>
+</ul>
+<h3 id="单词移动"><a href="#单词移动" class="headerlink" title="单词移动"></a>单词移动</h3><p>通过下面三个命令, 在单词与单词之间移动起来就非常畅通无阻了</p>
+<ul>
+<li><code>w</code> 光标移动到下一个单词的词首</li>
+<li><code>b</code> 向前移动光标，移动到前一个单词的词首</li>
+<li><code>e</code> 光标移动到下一个单词的词尾</li>
+</ul>
+<h3 id="块移动"><a href="#块移动" class="headerlink" title="块移动"></a>块移动</h3><p>通过以下几个命令, 光标就学会长距离的闪现了</p>
+<ul>
+<li><code>0</code> 移动到本行第一个字符上</li>
+<li><code>^</code> 移动到本行第一个非空白字符(或者结合<code>0</code> 和 <code>w</code>)</li>
+<li><code>$</code> 移动到行尾</li>
+<li><code>G</code> 移动到文件末尾行</li>
+<li><code>gg</code> 移动到文件首行</li>
+<li><code>)</code>  光标移动到下一句</li>
+<li><code>(</code> 光标移动到上一句</li>
+<li><code>{</code> 向上移动一个段落</li>
+<li><code>}</code> 向下移动一个段落</li>
+</ul>
+<h3 id="复杂移动"><a href="#复杂移动" class="headerlink" title="复杂移动"></a>复杂移动</h3><p>通过下面的命令, 光标就学会了精确的传送,想去哪去哪</p>
+<ul>
+<li><code>f[字符]</code>: 把光标移到同一行的指定字符处</li>
+<li><code>t[字符]</code>: 把光标移到同一行的下一个<code>c</code>字符前</li>
+</ul>
+<h3 id="插入命令"><a href="#插入命令" class="headerlink" title="插入命令"></a>插入命令</h3><ul>
+<li><code>i</code>  在当前位置前插入</li>
+<li><code>I</code> 在当前行首插入</li>
+<li><code>a</code> 在当前位置后插入</li>
+<li><code>A</code> 在当前行尾插入</li>
+<li><code>o</code> 在当前行之后插入一行</li>
+<li><code>O</code> 在当前行之前插入一行</li>
+</ul>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><ul>
+<li><code>dd</code> 删除当前行</li>
+<li><code>D</code> 删除当前字符至行尾。<code>D=d$</code></li>
+<li><code>[n]x</code> 删除光标起<code>1(n)</code>个字符</li>
+<li><code>d[n]w</code> 删除光标起<code>1(n)</code>个词</li>
+</ul>
+<h3 id="改写"><a href="#改写" class="headerlink" title="改写"></a>改写</h3><ul>
+<li><code>c[n]w</code> 改写光标后<code>1(n)</code>个词。</li>
+<li><code>c[n]l</code> 改写光标后<code>n</code>个字母。</li>
+<li><code>r</code> 替换光标处的字符</li>
+<li><code>R</code> 进入替换模式，按esc回到正常模式。</li>
+</ul>
+<h3 id="撤销与重做"><a href="#撤销与重做" class="headerlink" title="撤销与重做"></a>撤销与重做</h3><ul>
+<li><code>[n]u</code> 取消<code>1(n)</code>个改动。</li>
+<li><code>ctrl + r</code> 重做最后的改动(和 <code>u</code> 相反)</li>
+<li><code>U</code> 取消当前行中所有的改动。</li>
+</ul>
+<p>注意到上面的<code>d[n]w</code> 和<code>c[n]w</code>, 会发现其实是用删除命令<code>d</code> 结合了 移动命令中的 <code>w</code>, <code>vim</code> 中还有很多类似的结合(比如<code>dfc</code>), 包括命令的大小写区分, 可以在敲代码的时候亲自尝试一下, 用一次就记住了, 基本没有什么记忆成本.</p>
+<h3 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h3><ul>
+<li><code>y</code>: 复制在可视模式下选中的文本(或者结合之前所get到的规律, 试试 <code>yw</code>)</li>
+<li><code>yy</code>: 复制整行(可以结合数字 <code>2yy</code>就是复制两行)</li>
+<li><code>p</code> : 粘贴之前所复制(<code>y</code>) 的内容</li>
+</ul>
+<p>我现在习惯于 行选择模式<code>V</code> + 移动命令 + <code>y</code> 复制大段大段的文字.</p>
+<p>好了, 其实说完复制粘贴就够了, 懂得都懂。 </p>
+<h1 id="将Vim视作工具使用"><a href="#将Vim视作工具使用" class="headerlink" title="将Vim视作工具使用"></a>将Vim视作工具使用</h1><p>vim和现在的各种IDE并不互斥,开发过程中完全可以两者结合一起使用, 把Vim当作一个提高你编码效率的工具</p>
+<p>结合的方式很简单, 如果是VScode 安装Vim插件即可, 类似Webstorm,Idea 这些可以安装IdeaVim.</p>
+<p>作为中国程序员, 推荐安装 IdeaVimIdeaExtension(WebStorm)插件, 这样在切换成normal模式时, 它会自动帮你将输入法更改为英文输入法, 从而避免中文输入法的干扰 (切换回插入模式时也会自动将输入法改回之前设定)</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>分享两点感受</p>
+<ol>
+<li>像Vim 这些东西,只不过是工具而已, 只要能提高效率和体验, 怎么用见仁见智, 不要为Vim而Vim</li>
+<li>学习是个积累的过程, 避免一口吃成胖子的心态, 像Vim, 刚开始可能只能记住简单的几个命令, 但在coding过程中, 只要不断地使用, 所掌握的命令肯定会越来越多, 也会越来越熟练(我就在这么积累中)</li>
+</ol>
+<h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p><a href="https://vim.rtorr.com/" target="_blank" rel="noopener">Vim Cheat Sheet</a></p>
+<p><a href="https://www.freecodecamp.org/news/vim-editor-modes-explained/" target="_blank" rel="noopener">Vim Editor Modes Explained</a></p>
+<p><a href="http://www2.geog.ucl.ac.uk/~plewis/teaching/unix/vimtutor" target="_blank" rel="noopener">The VIM Tutor</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/51440836" target="_blank" rel="noopener">史上最全的Vim命令</a></p>
+
     
     </div>
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/2019/09/26/解决服务器ip被封ssh无法连接服务器的问题理/">解决服务器ip被封ssh无法连接服务器的问题</a>
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
         </span>
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-next">
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2019/10/19/我的终端快捷命令配置技巧/">我的终端快捷命令配置技巧</a>
             
         </span>
     </div>
@@ -214,8 +278,8 @@
     
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://shuizyang.com/2019/09/11/小知识点-我理解的javascript的LHS和RHS/';
-        this.page.identifier = '2019/09/11/小知识点-我理解的javascript的LHS和RHS/';
+        this.page.url = 'https://shuizyang.com/2020/12/20/两周的Vim使用感受/';
+        this.page.identifier = '2020/12/20/两周的Vim使用感受/';
         
         this.language = 'en';
         
@@ -240,7 +304,7 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2020 muggle-shuizy&nbsp;
+                &copy; 2021 muggle-shuizy&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
